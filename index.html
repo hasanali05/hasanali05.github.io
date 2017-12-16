@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Calculator (v.2.0)</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<!-- 
+	<p>Hello Ashik</p>
+	<p>Hello Tanmoy</p>
+	<p>Hello Molla</p>
+	<p>Hello vibek</p>
+
+	<a href="">Link one</a>
+	<a href="">Link two</a>
+	<a href="">Link three</a>
+	<a href="">Link four</a> -->
+
+	<div class="container-fluid">
+		<div class="row" style="height: 200px;" >
+			
+		</div>
+		<div class="row" >
+			<div class="col-sm-12 col-md-12 col-bg-4 col-xl-4" style="border: 1px solid #E5E5E5; ">
+				<div style="height: 200px; border: 50px solid white;" align="center">
+					<button type="button" class="btn btn-success form-control fixed" id="simpleCalculator" data-toggle="modal" data-target="#simpleCalculatorModal">Simple Calculator</button>
+				</div>
+			</div>
+			
+			<div class="col-sm-12 col-md-12 col-bg-4 col-xl-4 " style="border: 1px solid #E5E5E5; ">
+				<div style="height: 200px; border: 50px solid white;" align="center">
+					<button type="button" class="btn btn-warning form-control fixed" id="cgpaCalculator" data-toggle="modal" data-target="#cgpaCalculatorModal" >CGPA Calculator</button>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-bg-4 col-xl-4 " style="border: 1px solid #E5E5E5; ">
+				<div style="height: 200px; border: 50px solid white;" align="center">
+					<button type="button" class="btn btn-danger form-control fixed" id="more" data-toggle="modal" data-target="#moreModal" >More Calculator</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="modal fade" id="simpleCalculatorModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header m-auto">
+					<h3>Calculator</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 100%;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-10 col-lg-8 col-xl-6 m-auto">
+								<div class="card">
+									<div class="card-body" style="padding: 30px;">
+										<div class="row form-group"  style="text-align: right; border:none; margin: 0px;">
+											<output  style="text-align: right; width: 100%" id="resultString"></output>
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-1 " style="padding: 0px; margin: auto; height: 100px;">
+												<output name="flag_minus" id="flagMinus" class="form-control align-middle" style="height: 100%; position: relative; font-size: 22px; width: 100%; border-right: none; border-top-right-radius: 0rem; border-bottom-right-radius: 0rem; padding-top: 100%;" ></output>
+											</div>
+											<div class="col-sm-11" style=" padding: 0px;height: 100px;">
+												<input type="text" name="result" id="result" class="form-control" value="0" style="text-align: right; height: 100%; width: 100%; font-size: 22px; border-left: none; border-top-left-radius: 0rem; border-bottom-left-radius: 0rem; ">
+											</div>							
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-3">
+												<input type="submit" name="c" id="c" class="btn btn-danger form-control" value="C">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="ce" id="ce" class="btn btn-outline-dark form-control" value="CE">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="backspace" id="backspace" class="btn btn-outline-secondary form-control" value="&circlearrowleft;">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="inverse" id="inverse" class="btn btn-outline-secondary form-control" value="1/X">
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-3">
+												<input type="submit" name="sqrt" id="sqrt" class="btn btn-outline-warning form-control" value="&Sqrt;">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="square" id="square" class="btn btn-outline-warning form-control" value="X^2">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="remainder" id="remainder" class="btn btn-outline-warning form-control" value="%">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="division" id="division" class="btn btn-outline-info form-control" value="/">
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-3">
+												<input type="submit" name="seven" id="seven" class="btn btn-outline-success form-control" value="7">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="eight" id="eight" class="btn btn-outline-success form-control" value="8">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="nine" id="nine" class="btn btn-outline-success form-control" value="9">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="multiplication" id="multiplication" class="btn btn-outline-info form-control" value="*">
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-3">
+												<input type="submit" name="four" id="four" class="btn btn-outline-success form-control" value="4">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="five" id="five" class="btn btn-outline-success form-control" value="5">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="six" id="six" class="btn btn-outline-success form-control" value="6">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="subtraction" id="subtraction" class="btn btn-outline-info form-control" value="-">
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-3">
+												<input type="submit" name="one" id="one" class="btn btn-outline-success form-control" value="1">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="two" id="two" class="btn btn-outline-success form-control" value="2">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="three" id="three" class="btn btn-outline-success form-control" value="3">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="addition" id="addition" class="btn btn-outline-info form-control" value="+">
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col-sm-3">
+												<input type="submit" name="reverse" id="reverse" class="btn btn-outline-warning form-control" value="+/-">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="zero" id="zero" class="btn btn-outline-success form-control" value="0">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="point" id="point" class="btn btn-outline-warning form-control" value=".">
+											</div>
+											<div class="col-sm-3">
+												<input type="submit" name="equal" id="equal" class="btn btn-success form-control" value="=">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<p>Developed by hasan.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="cgpaCalculatorModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header m-auto w-75">
+					<h3>CPGA Calculator</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 50%;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12 col-lg-10 col-xl-8 m-auto">
+								<div class="jumbotron">
+									<div class="container">
+										<div class="row m-auto">
+											<h3>CPGA Calculator</h3>
+										</div>
+										<div class="row">
+											<div class="col-md-12 m-auto">
+												<div class="row form-group ">
+													<div class="col-md-4">
+														<label class="">Credit</label>
+													<input type="number" name="subject_credit" id="subjectCredit" class="form-control">
+													</div>
+													<div class="col-md-4">
+														<label class="">Grade point</label>
+													<input type="number" name="subject_grade_point" id="subjectGradePoint" class="form-control">
+													</div>
+													<div class="col-md-4 ">
+													<input type="submit" class="form-control btn btn-outline-success fixed" name="calculate" id="calculate" value="Add">
+													</div>
+													
+													
+												</div>
+												<div class="row form-group ">
+													<div class="col-md-4">
+														<label class="">Subjects</label>
+													<input type="number" name="subject_count" id="subjectCount" class="form-control">
+													</div>
+													<div class="col-md-4">
+														<label class="">Credits</label>
+													<input type="number" name="subject_credit_count" id="subjectCreditCount" class="form-control">
+													</div>
+													<div class="col-md-4">
+														<label class="">Grade Points</label>
+														<input type="number" name="subject_grade_point" id="subjectGradePointCount" class="form-control">
+													</div>											
+													
+												</div>
+												<div class="row form-group  ">
+													<label class="col-form-label col-sm-8">Current Grade Point Average (CGPA)</label>
+													<div class="col-sm-4">
+														<input type="text" name="cgpa" id="cgpa" class="form-control fixed bg-warning" style="text-align: right; font-size: 18px; font-weight: bold;">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr/>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12 col-lg-10 col-xl-8 m-auto">
+								<div class="jumbotron">
+									<div class="container">
+										<div class="row m-auto">
+											<h3>CPGA Estimation</h3>
+										</div>
+										<div class="row">
+											<div class="col-md-12 m-auto">
+												<div class="row form-group ">
+													<div class="col-md-3">
+														<label class="">Total Credit</label>
+													<input type="number" name="current_credit" id="currentCredit" class="form-control">
+													</div>
+													<div class="col-md-3">
+														<label class="">Current gpa</label>
+													<input type="number" name="current_gpa" id="currentGpa" class="form-control">
+													</div>									
+													<div class="col-md-3 ">
+													<input type="submit" class="form-control btn btn-outline-success fixed" name="evaluate" id="evaluate" value="Eval.">
+													</div>	
+													<div class="col-md-3">
+														<label class="">Grade Point</label>
+													<input type="number" name="current_grade_point" id="currentGradePoint" class="form-control">
+													</div>									
+													
+													
+													
+												</div>
+												<div class="row form-group ">
+													<div class="col-md-3">
+														<label class="">Subject Credit</label>
+													<input type="number" name="improve_subject_credit" id="improveSubjectCredit" class="form-control">
+													</div>
+													<div class="col-md-3">
+														<label class="">Previous Point</label>
+													<input type="number" name="previous" id="previous" class="form-control">
+													</div>
+													<div class="col-md-3">
+														<label class="">Improved Point</label>
+													<input type="number" name="improve" id="improve" class="form-control">
+													</div>
+													<div class="col-md-3 ">
+													<input type="submit" class="form-control btn btn-outline-danger fixed" name="estimate" id="estimate" value="Add">
+													</div>										
+													
+												</div>
+												<div class="row form-group ">
+													<div class="col-md-4">
+														<label class="">Subjects</label>
+													<input type="number" name="estimate_subject_count" id="estimateSubjectCount" class="form-control">
+													</div>
+													<div class="col-md-4">
+														<label class="">Total Credits</label>
+													<input type="number" name="estimate_total_credit" id="estimateTotalCredit" class="form-control">
+													</div>
+													<div class="col-md-4">
+														<label class="">Grade Points</label>
+													<input type="number" name="estimate_grade_point" id="estimateGradePoint" class="form-control">
+													</div>											
+													
+												</div>
+												<div class="row form-group  ">
+													<label class="col-form-label col-sm-8">Estimated Grade Point Average (GPA)</label>
+													<div class="col-sm-4">
+														<input type="text" name="egpa" id="egpa" class="form-control fixed bg-warning" style="text-align: right; font-size: 18px; font-weight: bold;"">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<p>Developed by hasan.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="moreModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header m-auto">
+					<h3>Calculator</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 100%;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-10 col-lg-8 col-xl-6 m-auto">
+								<div class="card">
+									<div class="card-body bg-dark" style="text-align: center; padding-top: 30px; color: white">
+										<p>More Calculators are coming. </p>							
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<p>Developed by hasan.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/simple-calculator.js"></script>
+	<script src="js/cgpa-calculator.js"></script>
+
+</body>
+</html>
+
+
+
