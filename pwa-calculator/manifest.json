@@ -1,6 +1,6 @@
 {
-  "name": "Weather",
-  "short_name": "Weather",
+  "name": "Calculator",
+  "short_name": "Calculator",
   "icons": [
     {
       "src": "./assets/icons/icon-72x72.png",
