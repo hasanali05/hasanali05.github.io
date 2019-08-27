@@ -364,6 +364,31 @@
 			</div>
 		</div>
 	</div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+
+
+        }
+
+
+        window.addEventListener('offline', () => {
+            console.log('Ops! We are offline');
+        });
+        window.addEventListener('online', () => {
+            console.log('Back Online');
+        });
+
+    </script>
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.js"></script>
